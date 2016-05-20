@@ -7,9 +7,9 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using IsitcomPhone.Resources;
+using PhoneOns.Resources;
 
-namespace IsitcomPhone
+namespace PhoneOns
 {
     public partial class MainPage : PhoneApplicationPage
     {
@@ -18,21 +18,20 @@ namespace IsitcomPhone
         {
             InitializeComponent();
 
+            if (pswd.Password.ToString() =="") { erreur.Visibility = System.Windows.Visibility.Collapsed; }
         }
 
         private void BoutonOK_Click(object sender, RoutedEventArgs e)
         {
             if (pswd.Password.ToString().Equals("admin"))
-            {
-               // NavigationService.Navigate(new Uri("/Page1.xaml",UriKind.Relative));
-                Frame.Navigate(typeof(Page1));
+            {   
+                NavigationService.Navigate(new Uri("/Page1.xaml?msg" +IDclient, UriKind.Relative));
             }
-            else
-            {
-                erreur.Visibility = System.Windows.Visibility.Visible;
-            }
-
+            else { erreur.Visibility = System.Windows.Visibility.Visible; }
+           
         }
 
-    }
+
+       
+    }  
 }
