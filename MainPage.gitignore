@@ -1,0 +1,73 @@
+<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Miroir"
+    xmlns:common="using:Miroir.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:UI="using:Microsoft.Advertising.WinRT.UI"
+    x:Name="pageRoot"
+    x:Class="Miroir.Page1"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d" Margin="0,4,0,-4">
+
+    <!--<UserControl x:Class="SL_OpenFileDialog_CS.Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    Width="400" Height="300">
+        <Grid x:Name="LayoutRoot" Background="White">
+            <Button x:Name="bOpenFileDialog" Content="Open File"
+                 Height="30" Width="60" Margin="10"
+                 HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 Click="bOpenFileDialog_Click" />
+
+            <TextBox x:Name="tbResults" Text="Silverlight Results"
+                 Height="30" Width="300" Margin="10,50"
+                 HorizontalAlignment="Left" VerticalAlignment="Top" 
+                 Background="Beige" />
+        </Grid>
+    </UserControl>-->
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">My Application</x:String>
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="Assets/background.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <UserControl                
+                Grid.Column="1" 
+               
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+        </UserControl>
+        <Grid Grid.Column="1" Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="Assets/MyFile.jpg" Stretch="Uniform" x:Name="img1" Height="90" PointerPressed="img2_ImageOpened" Margin="90 0 0 0"  />
+                <Image Source="Assets/addFile.jpg" Stretch="Uniform" x:Name="img2"  Height="90" PointerPressed="img1_ImageOpened" Margin="10 0 0 0"  />
+                
+            </StackPanel>
+
+       
+            
+        </Grid>
+    </Grid>
+    
+</Page>
